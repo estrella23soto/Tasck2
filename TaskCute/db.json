@@ -1,0 +1,88 @@
+{
+  "tareas": [
+    {
+      "id": "0",
+      "nombre": "aaaaaaaaaaa",
+      "descripcion": "aaaaaaaa",
+      "fechaVencimiento": "2024-07-09T00:00:00.000Z",
+      "completada": true
+    },
+    {
+      "id": "0",
+      "nombre": "prueba1",
+      "descripcion": "prueba31",
+      "fechaVencimiento": "2024-07-05",
+      "completada": false
+    },
+    {
+      "id": "0",
+      "nombre": "aaaaaaaaaaa",
+      "descripcion": "aaaaaaaa",
+      "fechaVencimiento": "2024-07-09",
+      "completada": false
+    },
+    {
+      "id": "0",
+      "nombre": "estrella",
+      "descripcion": "estrella",
+      "fechaVencimiento": "2024-07-09",
+      "completada": false
+    },
+    {
+      "id": 0,
+      "nombre": "Holaaa",
+      "descripcion": "mucho trabajp",
+      "fechaVencimiento": "2024-07-26T06:00:00.000Z",
+      "completada": false
+    },
+    {
+      "id": 0,
+      "nombre": "Tare2",
+      "descripcion": "despcion aaa",
+      "fechaVencimiento": "2024-07-28T06:00:00.000Z",
+      "completada": false
+    },
+    {
+      "id": 0,
+      "nombre": "prueba",
+      "descripcion": "aaaaaaaa",
+      "fechaVencimiento": "2024-08-01T06:00:00.000Z",
+      "completada": false
+    },
+    {
+      "id": 0,
+      "nombre": "Estrellaaaa2",
+      "descripcion": "Actualizar la documentación del proyecto para reflejar los cambios recientes en la arquitectura del sistema y las nuevas funcionalidades añadidas.",
+      "fechaVencimiento": "2024-07-31T06:00:00.000Z",
+      "completada": false
+    },
+    {
+      "id": 0,
+      "nombre": "Momento Susto",
+      "descripcion": "Actualizar la documentación del proyecto para reflejar los cambios recientes en la arquitectura del sistema y las nuevas funcionalidades añadidas.",
+      "fechaVencimiento": "2024-08-14T06:00:00.000Z",
+      "completada": false
+    },
+    {
+      "id": 0,
+      "nombre": "Prueba Ti",
+      "descripcion": "prueba",
+      "fechaVencimiento": "2024-08-14T06:00:00.000Z",
+      "completada": false
+    },
+    {
+      "id": 0,
+      "nombre": "top",
+      "descripcion": "top",
+      "fechaVencimiento": "2024-08-23T06:00:00.000Z",
+      "completada": false
+    },
+    {
+      "id": 0,
+      "nombre": "aaaa",
+      "descripcion": "djakndklak",
+      "fechaVencimiento": "2024-07-31T06:00:00.000Z",
+      "completada": false
+    }
+  ]
+}

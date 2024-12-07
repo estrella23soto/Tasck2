@@ -1,0 +1,115 @@
+<div class="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0">
+  <div class="md:flex md:items-center md:justify-end w-full sm:w-auto md:h-full md:w-1/2 py-8 px-4 sm:p-12 md:p-16 sm:rounded-2xl md:rounded-none sm:shadow md:shadow-none sm:bg-card">
+    <div class="w-full max-w-80 sm:w-80 mx-auto sm:mx-0 mt-12">
+      <!-- Logo -->
+      <div class="w-12">
+        <img src="assets/images/logo.png" routerLink="/users/login">
+      </div>
+
+      <!-- Title -->
+      <div class="mt-8 text-4xl font-extrabold tracking-tight leading-tight text-gray-600">Inicio de Sesión</div>
+
+      <!-- Sign in form -->
+      <form
+        class="mt-8"
+        [formGroup]="inicioFormulario"
+        #inicioNgForm="ngForm">
+
+        <!-- Email field -->
+        <mat-form-field class="w-full mt-5">
+          <mat-label>Correo Electronico</mat-label>
+          <input
+            id="email"
+            matInput
+            [formControlName]="'email'">
+          <mat-error *ngIf="inicioFormulario.get('email')?.hasError('required')">
+            El correo electronico es requerido
+          </mat-error>
+          <mat-error *ngIf="inicioFormulario.get('email')?.hasError('email')">
+            Porfavor ingresa un correo electronico valido
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Password field -->
+        <mat-form-field class="w-full mt-2">
+          <mat-label>Contraseña</mat-label>
+          <input
+            id="password"
+            matInput
+            type="password"
+            [formControlName]="'password'"
+            #passwordField>
+          <button
+            type="button"
+            (click)="passwordField.type === 'password' ? passwordField.type = 'text' : passwordField.type = 'password'"
+            matSuffix>
+            <mat-icon
+              class="icon-size-5"
+              *ngIf="passwordField.type === 'password'"
+            ></mat-icon>
+            <mat-icon
+              class="icon-size-5"
+              *ngIf="passwordField.type === 'text'"
+            ></mat-icon>
+          </button>
+          <mat-error>
+            La contraseña es requerida
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Actions -->
+        <!-- TODO Quitando para olvidar password ya que aun no se implementara la funcionalidad -->
+        <!-- <div class="inline-flex items-center justify-between w-full mt-1.5">
+          <mat-checkbox
+            class="-ml-2"
+            [color]="'primary'"
+            [formControlName]="'rememberMe'">
+            Remember me
+          </mat-checkbox>
+          <a
+            class="text-md font-medium text-primary-500 hover:underline no-underline"
+            [routerLink]="['/users/forgot-password']">Has olvidado tu contraseña?
+          </a>
+        </div> -->
+
+        <!-- Submit button -->
+        <button
+          class="fuse-mat-button-large w-full mt-6"
+          mat-flat-button
+          [color]="'primary'"
+          [disabled]="inicioFormulario.invalid"
+          (click)="inicioSesion()">
+          <span *ngIf="!inicioFormulario.disabled">
+            Iniciar Sesión
+          </span>
+          <mat-progress-spinner
+            *ngIf="inicioFormulario.disabled"
+            [diameter]="24"
+            [mode]="'indeterminate'"></mat-progress-spinner>
+        </button>
+
+        <div class="flex items-baseline mt-10 font-medium justify-center sm:justify-start">
+          <!-- <div>Ya tienes una cuenta?</div> -->
+          <p>¿No tienes una cuenta?
+            <a
+              class="ml-1 text-gray-600 hover:text-rose-300 no-underline"
+              [routerLink]="['/users/register']">  Regístrate
+          </a>
+          </p>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="relative hidden md:flex flex-auto items-center justify-center w-1/2 h-screen p-16 lg:px-28 overflow-hidden bg-gray-800 dark:border-l">
+    <video autoplay loop muted class="absolute inset-0 w-full h-full object-cover">
+      <source src="./assets/videos/FormRegister2.mp4" type="video/mp4">
+    </video>
+    <div class="w-18">
+      <img class="h-72 w-auto absolute inset-0 m-auto object-cover opacity-75" src="./assets/images/logo.png">
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,74 @@
+/* Centrar el formulario y hacerlo más largo */
+.form-container {
+  max-width: 600px; /* Ajusta el ancho según lo necesario */
+  margin: 50px auto; /* Centra el formulario vertical y horizontalmente */
+  padding: 24px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Mantiene la sombra original */
+  background: none; /* Elimina el fondo */
+}
+
+.full-width {
+  width: 100%; /* Asegura que los inputs ocupen todo el ancho disponible */
+}
+
+/* Estilos para toastr */
+.toast-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 33.33%; /* Ocupa un tercio de la pantalla */
+  z-index: 1050; /* Asegura que esté por encima de otros elementos */
+}
+
+.toast {
+  margin-top: 20px; /* Espacio entre toastr */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.toast-success {
+  background-color: #28a745 !important;
+  color: #fff !important;
+}
+
+.toast-error {
+  background-color: #dc3545 !important;
+  color: #fff !important;
+}
+
+.toast-warning {
+  background-color: #ffc107 !important;
+  color: #212529 !important;
+}
+
+.toast-info {
+  background-color: #17a2b8 !important;
+  color: #fff !important;
+}
+
+/* Estilo para el botón de cierre en toastr */
+.toast-close-button {
+  position: absolute; /* Posición absoluta para posicionamiento preciso */
+  top: 0; /* Alineación en la parte superior */
+  right: 0; /* Alineación en la parte derecha */
+  color: #fff; /* Color del botón */
+  font-size: 14px; /* Tamaño de la fuente */
+  font-weight: bold; /* Peso de la fuente */
+  line-height: 1; /* Ajuste de línea */
+  opacity: 1; /* Opacidad */
+  cursor: pointer; /* Cursor */
+  padding: 6px; /* Relleno */
+  background: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+}
+
+.toast-close-button:hover {
+  opacity: 0.8; /* Opacidad al pasar el ratón */
+}
+
+.snackbar-success {
+  background-color: #4caf50; /* Verde para éxito */
+}
+
+.snackbar-error {
+  background-color: #f44336; /* Rojo para error */
+}

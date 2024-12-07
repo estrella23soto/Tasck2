@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+import{a as r,b as n,c as s,d as m,n as p,r as a}from"./chunk-L7P5FSAB.mjs";var c=(()=>{let t=class t{constructor(){this.title="TaskCute"}};t.\u0275fac=function(o){return new(o||t)},t.\u0275cmp=n({type:t,selectors:[["app-root"]],decls:1,vars:0,template:function(o,d){o&1&&m(0,"router-outlet")},dependencies:[a]});let e=t;return e})();var u=(()=>{let t=class t{};t.\u0275fac=function(o){return new(o||t)},t.\u0275mod=s({type:t,bootstrap:[c]}),t.\u0275inj=r({imports:[p]});let e=t;return e})();export{u as a};

@@ -1,0 +1,113 @@
+<div class="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0">
+    <div
+        class="md:flex md:items-center md:justify-end w-full sm:w-auto md:h-full md:w-1/2 py-8 px-4 sm:p-12 md:p-16 sm:rounded-2xl md:rounded-none sm:shadow md:shadow-none sm:bg-card">
+        <div class="w-full max-w-80 sm:w-80 mx-auto sm:mx-0">
+            <!-- Logo -->
+            <div class="h-15 w-12">
+                <img src="assets/images/logo.png" routerLink="/users/login">
+            </div>
+
+            <!-- Title -->
+            <div class="mt-8 text-4xl font-extrabold tracking-tight leading-tight text-black text-center sm:text-left">
+                Crear Cuenta</div>
+            <div class="flex items-baseline mt-0.5 font-medium justify-center sm:justify-start">
+                <!-- <div>Ya tienes una cuenta?</div> -->
+                <a class="ml-1 text-gray-600 hover:text-rose-300 no-underline" [routerLink]="['/users/login']"> Iniciar
+                    Sesión
+                </a>
+            </div>
+            <!-- Sign Up form -->
+            <form class="mt-8" [formGroup]="formularioRegistro" #registroNgForm="ngForm">
+
+                <!-- Name field -->
+                <mat-form-field class="w-full">
+                    <mat-label>Nombre Completo</mat-label>
+                    <input id="name" matInput [formControlName]="'name'">
+                    <mat-error *ngIf="formularioRegistro.get('name')?.hasError('required')">
+                        El nombre completo es requerido
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Email field -->
+                <mat-form-field class="w-full mt-3">
+                    <mat-label>Correo Electronico</mat-label>
+                    <input id="email" matInput [formControlName]="'email'">
+                    <mat-error
+                    *ngIf="
+                    formularioRegistro.get('email').hasError('required') ||
+                    formularioRegistro.get('email').touched">
+                    Por favor, introduce una dirección de correo electrónico válida
+                  </mat-error>
+                </mat-form-field>
+
+                <!-- Password field -->
+                <mat-form-field class="w-full mt-3">
+                    <mat-label>Contraseña</mat-label>
+                    <input id="password" matInput type="password" [formControlName]="'password'" #passwordField>
+                    <button type="button"
+                        (click)="passwordField.type === 'password' ? passwordField.type = 'text' : passwordField.type = 'password'"
+                        matSuffix>
+                        <mat-icon class="icon-size-5" *ngIf="passwordField.type === 'password'"></mat-icon>
+                        <mat-icon class="icon-size-5" *ngIf="passwordField.type === 'text'"></mat-icon>
+                    </button>
+                    <mat-error *ngIf="formularioRegistro.get('password').hasError('required')">
+                        La contraseña es requerida
+                    </mat-error>
+                </mat-form-field>
+                <mat-error *ngIf="formularioRegistro.get('password').hasError('invalidPassword')">
+                    La contraseña debe cumplir con los siguientes requisitos: Al
+                    menos una letra mayúscula o minúscula. Al menos un dígito.
+                    Al menos un carácter especial de los siguientes: arroba $, !, %,
+                    *, #, ? o &. Debe tener una longitud mínima de 8 caracteres.
+                </mat-error>
+
+
+                <!-- ToS and PP -->
+                <!-- <div class="inline-flex items-end w-full mt-1.5">
+                  <mat-checkbox
+                      class="-ml-2"
+                      [color]="'primary'"
+                      [formControlName]="'agreements'">
+                      <span>I agree with</span>
+                      <a
+                          class="ml-1 text-primary-500 hover:underline"
+                          [routerLink]="['./']">Terms
+                      </a>
+                      <span>and</span>
+                      <a
+                          class="ml-1 text-primary-500 hover:underline"
+                          [routerLink]="['./']">Privacy Policy
+                      </a>
+                  </mat-checkbox>
+              </div> -->
+
+                <mat-checkbox class="-ml-2 font-extrabold" [color]="'primary'">
+                    <span>Al registrarte, aceptas nuestra </span>
+                    <a href="../../../assets/Politica de privacidad.html" target="_blank" class="text-pink-400">Política
+                        de privacidad.</a>
+                </mat-checkbox>
+
+                <!-- Submit button -->
+                <button class="fuse-mat-button-large w-full mt-6" mat-flat-button [color]="'primary'"
+                     (click)="registrarUsuario()" [routerLink]="['/users/login']">
+                    <span>
+                        Crear Cuenta
+                    </span>
+                    <mat-progress-spinner *ngIf="formularioRegistro.disabled" [diameter]="24"
+                        [mode]="'indeterminate'"></mat-progress-spinner>
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+    <div
+        class="relative hidden md:flex flex-auto items-center justify-center w-full md:w-1/2 h-screen p-0 lg:px-0 overflow-hidden bg-gray-800 dark:border-l">
+        <video autoplay loop muted class="absolute inset-0 w-full h-full object-cover">
+            <source src="./assets/videos/FormRegister2.mp4" type="video/mp4">
+        </video>
+        <div class="w-18">
+            <img class="h-72 w-auto absolute inset-0 m-auto object-cover opacity-75" src="./assets/images/logo.png">
+        </div>
+    </div>
+</div>

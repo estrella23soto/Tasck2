@@ -1,0 +1,148 @@
+.task-card {
+    margin-right: 16px; /* Puedes ajustar este valor según tus necesidades */
+    margin-bottom: 16px; /* Para añadir espacio vertical entre las tarjetas */
+  }
+  
+  .tooltip {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 4px;
+    max-width: 200px;
+    word-wrap: break-word;
+  }
+  
+ .tab-task-scroll-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.tab-task-content {
+  height: 100%;
+  overflow-y: scroll;
+  padding: 16px;
+}
+
+/* Oculta la barra de desplazamiento en navegadores WebKit */
+.tab-task-content::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Oculta la barra de desplazamiento en navegadores no WebKit */
+.tab-task-content {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+  .mt-4 {
+    margin-top: 16px;
+  }
+  
+  .grid {
+    display: grid;
+  }
+  
+  .gap-4 {
+    gap: 16px;
+  }
+  
+  .sm\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  
+  .task-card {
+    position: relative;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  
+  .bg-pink-500 {
+    background-color: #ec4899;
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
+  .text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  
+  .font-semibold {
+    font-weight: 600;
+  }
+  
+  .py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .rounded-t-lg {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+  
+  .flex-1 {
+    flex: 1 1 0%;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mt-4 {
+    margin-top: 1rem;
+  }
+  
+  .text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  .text-gray-500 {
+    color: #6b7280;
+  }
+  
+  .bg-red-500 {
+    background-color: #ef4444;
+  }
+  
+  .font-bold {
+    font-weight: 700;
+  }
+  
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  
+  .hover\:bg-red-700:hover {
+    background-color: #b91c1c;
+  }
+  
+  .z-10 {
+    z-index: 10;
+  }
+  

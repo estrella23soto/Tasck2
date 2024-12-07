@@ -1,0 +1,100 @@
+<app-header></app-header>
+
+<div class="tab-task-container p-4">
+  <mat-tab-group>
+    <mat-tab label="Pendientes">
+      <ul class="mt-4 grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <li *ngFor="let tarea of tareasPendientes" class="task-card bg-white rounded-lg p-4 shadow-md w-full h-auto flex flex-col justify-between relative overflow-hidden">
+          <!-- Contenido de la tarjeta -->
+          <div class="relative z-10">
+            <!-- Encabezado rosa -->
+            <div class="bg-pink-500 text-white py-2 px-4 rounded-t-lg">
+              <h3 class="text-lg font-semibold">{{ tarea.nombre }}</h3>
+            </div>
+
+            <!-- Contenido -->
+            <div class="flex-1 flex flex-col justify-center items-center text-center mt-4">
+              <p matTooltip="{{ tarea.descripcion }}" [matTooltipClass]="'tooltip'">{{ tarea.descripcion | truncate:5 }}</p>
+              <span class="text-sm text-gray-500">({{ tarea.fechaVencimiento | date:'dd/MM/yyyy' }})</span>
+            </div>
+
+            <!-- Botones -->
+            <div class="flex justify-between items-start mt-4">
+              <!-- Botón de eliminar -->
+              <button type="button" class="bg-red-500 text-white font-bold py-1 px-3 rounded hover:bg-red-700 z-10" (click)="eliminarTarea(tarea._id)">
+                <i class="fas fa-trash"></i>
+              </button>
+
+              <!-- Checkbox de tarea completada -->
+              <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 ml-2 mt-1 z-10" [(ngModel)]="tarea.completada" (change)="actualizarTarea(tarea)" />
+            </div>
+          </div>
+        </li>
+      </ul>
+    </mat-tab>
+
+    <mat-tab label="Completadas">
+      <ul class="mt-4 grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <li *ngFor="let tarea of tareasCompletadas" class="task-card bg-white rounded-lg p-4 shadow-md w-full h-auto flex flex-col justify-between relative overflow-hidden">
+          <!-- Contenido de la tarjeta -->
+          <div class="relative z-10">
+            <!-- Encabezado rosa -->
+            <div class="bg-pink-500 text-white py-2 px-4 rounded-t-lg">
+              <h3 class="text-lg font-semibold">{{ tarea.nombre }}</h3>
+            </div>
+
+            <!-- Contenido -->
+            <div class="flex-1 flex flex-col justify-center items-center text-center mt-4">
+              <p matTooltip="{{ tarea.descripcion }}" [matTooltipClass]="'tooltip'">{{ tarea.descripcion | truncate:5 }}</p>
+              <span class="text-sm text-gray-500">({{ tarea.fechaVencimiento | date:'dd/MM/yyyy' }})</span>
+            </div>
+
+            <!-- Botones -->
+            <div class="flex justify-between items-start mt-4">
+              <!-- Botón de eliminar -->
+              <button type="button" class="bg-red-500 text-white font-bold py-1 px-3 rounded hover:bg-red-700 z-10" (click)="eliminarTarea(tarea._id)">
+                <i class="fas fa-trash"></i>
+              </button>
+
+              <!-- Checkbox de tarea completada -->
+              <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 ml-2 mt-1 z-10" [(ngModel)]="tarea.completada" (change)="actualizarTarea(tarea)" />
+            </div>
+          </div>
+        </li>
+      </ul>
+    </mat-tab>
+
+    <mat-tab label="Vencidas">
+      <ul class="mt-4 grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <li *ngFor="let tarea of tareasVencidas" class="task-card bg-white rounded-lg p-4 shadow-md w-full h-auto flex flex-col justify-between relative overflow-hidden">
+          <!-- Contenido de la tarjeta -->
+          <div class="relative z-10">
+            <!-- Encabezado rosa -->
+            <div class="bg-pink-500 text-white py-2 px-4 rounded-t-lg">
+              <h3 class="text-lg font-semibold">{{ tarea.nombre }}</h3>
+            </div>
+
+            <!-- Contenido -->
+            <div class="flex-1 flex flex-col justify-center items-center text-center mt-4">
+              <p matTooltip="{{ tarea.descripcion }}" [matTooltipClass]="'tooltip'">{{ tarea.descripcion | truncate:5 }}</p>
+              <span class="text-sm text-gray-500">({{ tarea.fechaVencimiento | date:'dd/MM/yyyy' }})</span>
+            </div>
+
+            <!-- Botones -->
+            <div class="flex justify-between items-start mt-4">
+              <!-- Botón de eliminar -->
+              <button type="button" class="bg-red-500 text-white font-bold py-1 px-3 rounded hover:bg-red-700 z-10" (click)="eliminarTarea(tarea._id)">
+                <i class="fas fa-trash"></i>
+              </button>
+
+              <!-- Checkbox de tarea completada -->
+              <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 ml-2 mt-1 z-10" [(ngModel)]="tarea.completada" (change)="actualizarTarea(tarea)" />
+            </div>
+          </div>
+        </li>
+      </ul>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+<app-footer></app-footer>

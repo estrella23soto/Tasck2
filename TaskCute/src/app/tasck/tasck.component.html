@@ -1,0 +1,40 @@
+
+<app-header></app-header>
+<div class="form-container rounded-lg shadow-md">
+  <h1 class="text-2xl font-bold mb-4">Registro de Tareas</h1>
+
+  <form [formGroup]="tareaForm" (ngSubmit)="agregarTarea()">
+    <div class="space-y-4">
+      <div class="mb-4">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Nombre" formControlName="nombre">
+          <mat-error *ngIf="tareaForm.get('nombre')?.invalid && tareaForm.get('nombre')?.touched">El nombre es obligatorio</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-4">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Descripción</mat-label>
+          <textarea matInput placeholder="Descripción" formControlName="descripcion"></textarea>
+          <mat-error *ngIf="tareaForm.get('descripcion')?.invalid && tareaForm.get('descripcion')?.touched">La descripción es obligatoria</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-4">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Fecha de Vencimiento</mat-label>
+          <input matInput [matDatepicker]="picker" placeholder="Fecha de Vencimiento" formControlName="fechaVencimiento">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="tareaForm.get('fechaVencimiento')?.invalid && tareaForm.get('fechaVencimiento')?.touched">La fecha de vencimiento es obligatoria</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="tareaForm.invalid">Agregar</button>
+      </div>
+    </div>
+  </form>
+</div>
+<app-footer></app-footer>
